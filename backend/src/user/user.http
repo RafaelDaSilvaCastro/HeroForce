@@ -1,0 +1,27 @@
+###list users
+GET http://localhost:3000/user
+
+###get users
+GET http://localhost:3000/user/a57748d8-aa15-4b54-843e-28f09e2de8de
+
+###create users
+POST http://localhost:3000/user/
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "character": "Spider-Man"
+}
+
+
+###update users
+PATCH http://localhost:3000/user/a57748d8-aa15-4b54-843e-28f09e2de8de
+Content-Type: application/json
+
+{
+  "character": "Batman"
+}
+
+###delete users
+DELETE http://localhost:3000/user/ad07e6a3-8784-43c4-b78a-7a475f203389
