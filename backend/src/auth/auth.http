@@ -1,0 +1,19 @@
+### singup
+POST http://localhost:3000/auth/singup
+Content-Type: application/json
+
+{
+  "email": "john@example2.com",
+  "password": "password123",
+  "name": "John Doe",
+  "character": "Spider-Man"
+}
+
+### singin
+POST http://localhost:3000/auth/singin
+Content-Type: application/json
+
+{
+  "email": "john@example2.com",
+  "password": "password123"
+}

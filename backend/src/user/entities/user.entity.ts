@@ -15,6 +15,9 @@ export class User {
   @Column()
   character!: string;
 
+  @Column()
+  password!: string;
+
   @OneToMany(() => Project, project => project.user)
   projects!: Project[];
 }
