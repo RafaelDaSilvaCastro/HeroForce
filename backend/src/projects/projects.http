@@ -1,0 +1,30 @@
+###list projects
+GET http://localhost:3000/projects
+
+###get projects
+GET http://localhost:3000/projects/6b411c91-2398-4d27-b635-e11decef6a0e
+
+###create projects
+POST http://localhost:3000/projects/
+Content-Type: application/json
+
+{
+  "name": "Project Name",
+  "description": "Project Description",
+  "status": "pendente",
+  "goals": ["encantamento"],
+  "userId": "b6892244-31d6-48d8-8a33-c1a78c6e170e"
+}
+
+
+###update projects
+PATCH http://localhost:3000/projects/6b411c91-2398-4d27-b635-e11decef6a0e
+Content-Type: application/json
+
+{
+  "status": "em andamento"
+}
+
+
+###delete projects
+DELETE http://localhost:3000/projects/63a026cd-95f0-4ef7-901b-b711f8a056e0
