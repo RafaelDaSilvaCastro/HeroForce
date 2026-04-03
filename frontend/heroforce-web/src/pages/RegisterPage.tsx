@@ -157,20 +157,6 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        {/* Divider */}
-        <div style={styles.divider}>
-          <hr style={styles.hr} />
-          <span style={styles.dividerText}>ou</span>
-          <hr style={styles.hr} />
-        </div>
-
-        {/* Register link */}
-        <p style={styles.registerText}>
-          Ainda não tem conta?{' '}
-          <span onClick={() => navigate('/register')} style={styles.registerLink}>
-            Cadastre-se aqui
-          </span>
-        </p>
       </div>
     </div>
   )

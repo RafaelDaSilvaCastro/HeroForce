@@ -3,11 +3,12 @@ POST http://localhost:3000/auth/singup
 Content-Type: application/json
 
 {
-    "email": "32423wew@gmail.com",
-    "password": "123123123",
-    "passwordConfirm": "123123123",
-    "name": "dqwdqw",
-    "character": "wqdwdqwdwd"
+    "email": "admin@gmail.com",
+    "password": "adminadmin",
+    "passwordConfirm": "adminadmin",
+    "name": "admin",
+    "character": "admin",
+    "role": "admin"
 }
 
 ### singin
@@ -15,6 +16,6 @@ POST http://localhost:3000/auth/singin
 Content-Type: application/json
 
 {
-  "email": "tesweqwte@gmail.com",
-  "password": "123123123"
+  "email": "admin@gmail.com",
+  "password": "adminadmin"
 }
