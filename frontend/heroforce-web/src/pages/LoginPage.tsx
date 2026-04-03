@@ -34,7 +34,7 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
     try {
-      const { data } = await api.post('/auth/singin', form)
+      const { data } = await api.post('/auth/signin', form)
 
       if(!data.access_token) throw new Error('Usuário ou senha inválidos.')
 

@@ -41,7 +41,7 @@ export default function RegisterPage() {
         return
       }
 
-      const { data } = await api.post('/auth/singup', form)
+      const { data } = await api.post('/auth/signup', form)
       localStorage.setItem('token', data.access_token)
       navigate('/')
     } catch {

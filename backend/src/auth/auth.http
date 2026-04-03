@@ -1,9 +1,9 @@
-### singup
-POST http://localhost:3000/auth/singup
+### signup
+POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email": "admin@gmail.com",
+    "email": "admin@gma6il.com",
     "password": "adminadmin",
     "passwordConfirm": "adminadmin",
     "name": "admin",
@@ -11,8 +11,8 @@ Content-Type: application/json
     "role": "admin"
 }
 
-### singin
-POST http://localhost:3000/auth/singin
+### signin
+POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
