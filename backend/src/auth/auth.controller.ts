@@ -7,8 +7,8 @@ export class AuthController {
 
   @Post('singup')
   singUp(@Body() body: any) {
-    const { email, password, name, character } = body;
-    return this.authService.singUp(email, password, name, character);
+    const { email, password, name, character, role } = body;
+    return this.authService.singUp(email, password, name, character, role);
   }
 
  @Post('singin')

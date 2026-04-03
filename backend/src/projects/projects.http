@@ -6,6 +6,7 @@ GET http://localhost:3000/projects/6b411c91-2398-4d27-b635-e11decef6a0e
 
 ###create projects
 POST http://localhost:3000/projects/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3dlcXd0ZUBnbWFpbC5jb20iLCJzdWIiOiI1N2U2OWM5OS0wNmY2LTRkZTYtOTZhZi00N2QzMDA0YzJlM2QiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzUyMzU0MzgsImV4cCI6MTc3NTIzNTQ5OH0.t-kC1YfdZObwiQCF-zSWygLw-AtyeFl0iv0dMtJyu1g
 Content-Type: application/json
 
 {
@@ -13,12 +14,13 @@ Content-Type: application/json
   "description": "Project Description",
   "status": "pendente",
   "goals": ["encantamento"],
-  "userId": "b6892244-31d6-48d8-8a33-c1a78c6e170e"
+  "userId": "57e69c99-06f6-4de6-96af-47d3004c2e3d"
 }
 
 
 ###update projects
-PATCH http://localhost:3000/projects/6b411c91-2398-4d27-b635-e11decef6a0e
+PATCH http://localhost:3000/projects/5dcc5c23-14b0-4032-9c8f-df29516934ae
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3dlcXd0ZUBnbWFpbC5jb20iLCJzdWIiOiI1N2U2OWM5OS0wNmY2LTRkZTYtOTZhZi00N2QzMDA0YzJlM2QiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzUyMzU4MTQsImV4cCI6MTc3NTIzNTg3NH0.h95WsQXroI-fqJjaDoylLKVKdAdqkOHZFns_P5ZnxwA
 Content-Type: application/json
 
 {
@@ -27,4 +29,6 @@ Content-Type: application/json
 
 
 ###delete projects
-DELETE http://localhost:3000/projects/63a026cd-95f0-4ef7-901b-b711f8a056e0
+DELETE http://localhost:3000/projects/5dcc5c23-14b0-4032-9c8f-df29516934ae
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3dlcXd0ZUBnbWFpbC5jb20iLCJzdWIiOiI1N2U2OWM5OS0wNmY2LTRkZTYtOTZhZi00N2QzMDA0YzJlM2QiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NzUyMzU4MTQsImV4cCI6MTc3NTIzNTg3NH0.h95WsQXroI-fqJjaDoylLKVKdAdqkOHZFns_P5ZnxwA
+Content-Type: application/json

@@ -14,7 +14,7 @@ export class AuthService {
     return 'Hello World!';
   }
 
-  async singUp(email: string, password: string, name: string, character: string) {
+  async singUp(email: string, password: string, name: string, character: string, role: string = 'user') {
     const user = await this.userService.findByEmail(email);
     if (user) {
       return new BadRequestException('Email already in use');
@@ -24,7 +24,7 @@ export class AuthService {
     const hash = await scrypt(password, salt, 32) as Buffer;
     const saltAndHash = salt + '.' + hash.toString('hex');
 
-    const newUser = await this.userService.create({ email, password: saltAndHash, name, character });
+    const newUser = await this.userService.create({ email, password: saltAndHash, name, character, role});
 
     const { password: _, ...result } = newUser;
     return result;
@@ -46,7 +46,7 @@ export class AuthService {
     console.log('User authenticated successfully');
     console.log('Sing in:', user);
 
-    const payload = {email: user.email, sub: user.id};
+    const payload = {email: user.email, sub: user.id, role: user.role};
     return {
       access_token: this.jwtService.sign(payload),
     };
