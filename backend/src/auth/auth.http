@@ -3,10 +3,11 @@ POST http://localhost:3000/auth/singup
 Content-Type: application/json
 
 {
-  "email": "john@example3.com",
-  "password": "password123",
-  "name": "John Doe",
-  "character": "Spider-Man"
+    "email": "tesweqwte@gmail.com",
+    "password": "123123123",
+    "passwordConfirm": "123123123",
+    "name": "dqwdqw",
+    "character": "wqdwdqwdwd"
 }
 
 ### singin

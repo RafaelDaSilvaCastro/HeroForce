@@ -34,7 +34,7 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
     try {
-      const { data } = await api.post('/auth/login', form)
+      const { data } = await api.post('/auth/singin', form)
       localStorage.setItem('token', data.access_token)
       navigate('/dashboard')
     } catch {
