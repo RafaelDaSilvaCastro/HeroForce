@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt/dist/jwt.service';
 import { randomBytes, scrypt as _scrypt } from 'crypto'
 import { UserService } from 'src/user/user.service';
 import { promisify } from 'util';
@@ -7,8 +8,8 @@ const scrypt = promisify(_scrypt);
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly userService: UserService) {}
-
+  constructor(private readonly userService: UserService, private readonly jwtService: JwtService) {}
+  
   getHello(): string {
     return 'Hello World!';
   }
@@ -23,7 +24,10 @@ export class AuthService {
     const hash = await scrypt(password, salt, 32) as Buffer;
     const saltAndHash = salt + '.' + hash.toString('hex');
 
-    return this.userService.create({ email, password: saltAndHash, name, character });
+    const newUser = await this.userService.create({ email, password: saltAndHash, name, character });
+
+    const { password: _, ...result } = newUser;
+    return result;
   }
 
   async singin(email: string, password: string) {
@@ -39,7 +43,12 @@ export class AuthService {
       return new UnauthorizedException('Invalid email or password');
     }
 
-    const { password: _, ...result } = user;
-    return result;
+    console.log('User authenticated successfully');
+    console.log('Sing in:', user);
+
+    const payload = {email: user.email, sub: user.id};
+    return {
+      access_token: this.jwtService.sign(payload),
+    };
   }
 }

@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProjectsModule } from './projects/projects.module';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config/dist/config.module';
 
 @Module({
   imports: [
@@ -20,7 +21,10 @@ import { AuthModule } from './auth/auth.module';
     }),
     UserModule,
     ProjectsModule,
-    AuthModule
+    AuthModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
