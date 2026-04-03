@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode'
+import logo from '../assets/homem-aranha-branca-pequena.png'
 import api from '../services/api'
 
 // ── Types ──────────────────────────────────────────────────────────
@@ -173,14 +174,7 @@ export default function DashboardPage() {
       {/* Navbar */}
       <nav style={s.nav}>
         <div style={s.navLeft}>
-          <svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#c0002a"/>
-            <ellipse cx="24" cy="24" rx="8" ry="12" fill="#1a1a2e" opacity="0.9"/>
-            <ellipse cx="20" cy="20" rx="4" ry="3" fill="white" opacity="0.9"/>
-            <ellipse cx="28" cy="20" rx="4" ry="3" fill="white" opacity="0.9"/>
-            <ellipse cx="20" cy="20" rx="2" ry="1.5" fill="#1a1a2e"/>
-            <ellipse cx="28" cy="20" rx="2" ry="1.5" fill="#1a1a2e"/>
-          </svg>
+          <img src={logo} alt="Logo do Homem-Aranha" />
           <span style={s.navBrand}>HeroForce</span>
         </div>
         <div style={s.navRight}>
