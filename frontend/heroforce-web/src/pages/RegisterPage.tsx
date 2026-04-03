@@ -35,6 +35,12 @@ export default function RegisterPage() {
     setError('')
     setLoading(true)
     try {
+
+      if(form.password !== form.passwordConfirm) {
+        setError('As senhas não coincidem.')
+        return
+      }
+
       const { data } = await api.post('/auth/singup', form)
       localStorage.setItem('token', data.access_token)
       navigate('/')

@@ -35,6 +35,9 @@ export default function LoginPage() {
     setLoading(true)
     try {
       const { data } = await api.post('/auth/singin', form)
+
+      if(!data.access_token) throw new Error('Usuário ou senha inválidos.')
+
       localStorage.setItem('token', data.access_token)
       navigate('/dashboard')
     } catch {
