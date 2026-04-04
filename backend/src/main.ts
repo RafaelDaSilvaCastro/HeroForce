@@ -12,7 +12,7 @@ async function bootstrap() {
     }));
 
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://tranquil-encouragement-production-288f.up.railway.app'],
     credentials: true,
   });
 
