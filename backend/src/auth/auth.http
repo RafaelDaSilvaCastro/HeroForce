@@ -3,11 +3,10 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email": "admin@gma6il.com",
+    "email": "admin2@gmail.com",
     "password": "adminadmin",
-    "passwordConfirm": "adminadmin",
     "name": "admin",
-    "character": "admin",
+    "character": "Wolverine",
     "role": "admin"
 }
 
