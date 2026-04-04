@@ -13,12 +13,12 @@ export class CreateProjectDto {
   description!: string;
 
   @IsEnum(ProjectStatus)
-  @ApiProperty({ example: 'pendente', enum: ['pendente', 'em andamento', 'concluído'] })
+  @ApiProperty({ example: 'pendente', enum: ProjectStatus, description: 'Status do projeto' })
   status!: ProjectStatus;
 
   @IsArray()
   @IsEnum(ProjectGoal, { each: true })
-  @ApiProperty({ type: [String], example: ['agilidade', 'eficiência'] })
+  @ApiProperty({ type: [String], enum: ProjectGoal, example: ['encantamento'], description: 'Objetivos do projeto' })
   goals!: ProjectGoal[];
 
   @IsUUID()

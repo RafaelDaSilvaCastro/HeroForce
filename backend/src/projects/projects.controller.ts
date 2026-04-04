@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, NotFoundException, UseGuards } from '@nestjs/common';
-import { ApiTags, ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
 import { ProjectsService } from './projects.service';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
@@ -17,7 +17,20 @@ export class ProjectsController {
   @Post()
   @Roles('admin')
   @ApiOperation({ summary: 'Criar novo projeto' })
+  @ApiBody({
+    type: CreateProjectDto,
+    schema: {
+      example: {
+        name: 'Project Name',
+        description: 'Project Description',
+        status: 'pendente',
+        goals: ['encantamento'],
+        userId: '57e69c99-06f6-4de6-96af-47d3004c2e3d',
+      },
+    },
+  })
   @ApiResponse({ status: 201, description: 'Projeto criado' })
+  @ApiResponse({ status: 404, description: 'User não encontrado' })
   create(@Body() createProjectDto: CreateProjectDto) {
     return this.projectsService.create(createProjectDto);
   }
@@ -58,6 +71,5 @@ export class ProjectsController {
   @ApiResponse({ status: 404, description: 'Projeto não encontrado' })
   async remove(@Param('id') id: string) {
     const project = await this.projectsService.remove(id);
-    if (!project) throw new NotFoundException(`Project with id ${id} not found`);
   }
 }

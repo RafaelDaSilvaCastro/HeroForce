@@ -14,6 +14,10 @@ export class UserService {
 
   create(createUserDto: CreateUserDto) {
     const user = this.userRepository.create(createUserDto);
+    if (!user.role) {
+      user.role = 'user'; 
+    }
+
     return this.userRepository.save(user);
   }
 

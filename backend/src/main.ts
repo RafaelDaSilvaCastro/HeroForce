@@ -11,19 +11,19 @@ async function bootstrap() {
       whitelist: true,
     }));
 
-    app.enableCors({
-      origin: 'http://localhost:5173',
-      credentials: true,
-    });
+  app.enableCors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+  });
 
-    const config = new DocumentBuilder()
+  const config = new DocumentBuilder()
     .setTitle('HeroForce API')
     .setDescription('API para gerenciamento de projetos e heróis')
     .setVersion('1.0')
     .addTag('Auth')
-    .addTag('Projects')
-    .addTag('Heroes')
-    .addBearerAuth()
+    .addTag('projects')
+    .addTag('user')
+    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }, 'jwt')
     .build()
 
   const document = SwaggerModule.createDocument(app, config);

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
@@ -14,11 +14,11 @@ export class ProjectsService {
 
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
-  ) {}
+  ) { }
 
   async create(createProjectDto: CreateProjectDto) {
     const user = await this.userRepository.findOneBy({ id: createProjectDto.userId });
-    if (!user) throw new Error('User not found');
+    if (!user) throw new NotFoundException('User not found');
 
     const project = this.repository.create({
       ...createProjectDto,
@@ -38,14 +38,14 @@ export class ProjectsService {
 
   async update(id: string, updateProjectDto: UpdateProjectDto) {
     const project = await this.repository.findOneBy({ id });
-    if (!project) throw new Error('Project not found');
+    if (!project) throw new NotFoundException('Project not found');
     this.repository.merge(project, updateProjectDto);
     return this.repository.save(project);
   }
 
   async remove(id: string) {
     const project = await this.repository.findOneBy({ id });
-    if (!project) throw new Error('Project not found');
+    if (!project) throw new NotFoundException('Project not found');
     return this.repository.remove(project);
   }
 }
