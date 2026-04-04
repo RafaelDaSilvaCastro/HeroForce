@@ -11,13 +11,11 @@ async function bootstrap() {
       whitelist: true,
     }));
 
-  app.enableCors({
-    origin: true,
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-
-  });
+app.enableCors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+});
 
   const config = new DocumentBuilder()
     .setTitle('HeroForce API')
