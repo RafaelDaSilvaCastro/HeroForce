@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import api from '../services/api'
 import logo from '../assets/homem-aranha-branca.png'
 
+import { CHARACTER } from '../enum/character'
+
 const EyeIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -26,7 +28,7 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
@@ -145,15 +147,19 @@ export default function RegisterPage() {
 
           <div style={styles.fieldGroup}>
             <label style={styles.label}>Personagem</label>
-            <input
-              type="character"
+            <select
               name="character"
               value={form.character}
               onChange={handleChange}
-              placeholder="Homem-Aranha"
               required
               style={styles.input}
-            />
+            >
+              {CHARACTER.map((char) => (
+                <option key={char} value={char}>
+                  {char}
+                </option>
+              ))}
+            </select>
           </div>
 
           {error && <p style={styles.error}>{error}</p>}

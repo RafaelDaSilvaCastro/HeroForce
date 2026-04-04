@@ -1,6 +1,7 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateUserDto } from './create-user.dto';
 import { ApiPropertyOptional } from '@nestjs/swagger';
+import { Character } from 'src/enum/character';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
   @ApiPropertyOptional({ example: 'Peter Parker', description: 'Nome do usuário (opcional)' })
@@ -10,7 +11,7 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
   email?: string;
 
   @ApiPropertyOptional({ example: 'Homem-Aranha', description: 'Personagem do usuário (opcional)' })
-  character?: string;
+  character?: Character;
 
   @ApiPropertyOptional({ example: 'password123', description: 'Senha do usuário (opcional)' })
   password?: string;

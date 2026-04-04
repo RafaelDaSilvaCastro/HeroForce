@@ -1,5 +1,6 @@
 import { Project } from "src/projects/entities/project.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Character } from "src/enum/character";
 
 @Entity('users')
 export class User {
@@ -12,8 +13,8 @@ export class User {
   @Column({ unique: true })
   email!: string;
 
-  @Column()
-  character!: string;
+@Column({ type: 'enum', enum: Character })
+character!: Character;
 
   @Column()
   password!: string;

@@ -1,6 +1,7 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt/dist/jwt.service';
 import { randomBytes, scrypt as _scrypt } from 'crypto'
+import { Character } from 'src/enum/character';
 import { UserService } from 'src/user/user.service';
 import { promisify } from 'util';
 
@@ -14,7 +15,7 @@ export class AuthService {
     return 'Hello World!';
   }
 
-  async singUp(email: string, password: string, name: string, character: string, role: string = 'user') {
+  async singUp(email: string, password: string, name: string, character: Character, role: string = 'user') {
     const user = await this.userService.findByEmail(email);
     if (user) {
       return new BadRequestException('Email already in use');
