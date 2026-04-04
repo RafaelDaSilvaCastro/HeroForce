@@ -16,7 +16,7 @@ export class ProjectsController {
 
   @Post()
   @Roles('admin')
-  @ApiOperation({ summary: 'Criar novo projeto' })
+  @ApiOperation({ summary: 'Criar novo projeto', description: 'Requer token de usuário com role admin' })
   @ApiBody({
     type: CreateProjectDto,
     schema: {
@@ -36,7 +36,7 @@ export class ProjectsController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Listar projetos' })
+  @ApiOperation({ summary: 'Listar projetos', description: 'Requer token de usuário com role admin' })
   @ApiResponse({ status: 200, description: 'Lista de projetos' })
   findAll() {
     return this.projectsService.findAll();
@@ -54,7 +54,7 @@ export class ProjectsController {
 
   @Patch(':id')
   @Roles('admin')
-  @ApiOperation({ summary: 'Atualizar projeto' })
+  @ApiOperation({ summary: 'Atualizar projeto', description: 'Requer token de usuário com role admin' })
   @ApiResponse({ status: 200, description: 'Projeto atualizado' })
   @ApiResponse({ status: 404, description: 'Projeto não encontrado' })
   async update(@Param('id') id: string, @Body() updateProjectDto: UpdateProjectDto) {
@@ -66,7 +66,7 @@ export class ProjectsController {
   @Delete(':id')
   @HttpCode(204)
   @Roles('admin')
-  @ApiOperation({ summary: 'Excluir projeto' })
+  @ApiOperation({ summary: 'Excluir projeto', description: 'Requer token de usuário com role admin' })
   @ApiResponse({ status: 204, description: 'Projeto excluído' })
   @ApiResponse({ status: 404, description: 'Projeto não encontrado' })
   async remove(@Param('id') id: string) {
