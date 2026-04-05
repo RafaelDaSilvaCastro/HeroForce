@@ -7,7 +7,7 @@
 
 # 🦸 HeroForce
 
-Portal web fullstack de gestão e vendas de projetos heroicos. Construído com NestJS, ReactJS, TypeScript, TypeORM e PostgreSQL.
+Portal web fullstack de gestão de projetos heroicos. Construído com NestJS, ReactJS, TypeScript, TypeORM e PostgreSQL.
 
 ## 🌐 Deploy
 
