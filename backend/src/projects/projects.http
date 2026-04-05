@@ -4,6 +4,10 @@ GET http://localhost:3000/projects
 ###get projects
 GET http://localhost:3000/projects/6b411c91-2398-4d27-b635-e11decef6a0e
 
+###get projects by userId
+GET http://localhost:3000/projects/user/d6420467-b06a-402a-8f7a-f8216535882a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBnbWFpbC5jb20iLCJzdWIiOiI4MjA3NjFlNi1mNjQxLTRiN2EtYmFjNi0xOTBiZjJiNWVlMmYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc3NTM1MzU2MiwiZXhwIjoxNzc1MzY3OTYyfQ.spqslpN6pC6CEhueKsial7CwSo3WR8myPqjO5s3bXJw
+
 ###create projects
 POST http://localhost:3000/projects/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInN1YiI6Ijc5YjNjZjA4LTFlZWYtNDMyMS1iODMxLTM1MzcyYWYyMDZhMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTMwMTkzOCwiZXhwIjoxNzc1MzE2MzM4fQ.WC9xClT-jWm_Qyzu1LlvEG6fqwBF-dJK_VrDqYr3WYg

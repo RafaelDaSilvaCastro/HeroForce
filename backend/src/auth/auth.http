@@ -4,10 +4,10 @@ Content-Type: application/json
 
 {
     "email": "admin2@gmail.com",
-    "password": "adminadmin",
-    "name": "admin",
+    "password": "acess_admin",
+    "name": "Administrador",
     "character": "Wolverine",
-    "role": "admin"
+    "role": "user"
 }
 
 ### signin
@@ -15,6 +15,6 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email": "admin@gmail.com",
-  "password": "adminadmin"
+  "email": "admin2@gmail.com",
+  "password": "acess_admin"
 }

@@ -41,6 +41,13 @@ export class ProjectsController {
   findAll() {
     return this.projectsService.findAll();
   }
+  
+  @Get('user/:userId')
+  @ApiOperation({ summary: 'Buscar projetos por userId' })
+  @ApiResponse({ status: 200, description: 'Projetos encontrados' })
+  findByUserId(@Param('userId') userId: string) {
+    return this.projectsService.findByUserId(userId);
+  }
 
   @Get(':id')
   @ApiOperation({ summary: 'Buscar projeto por id' })

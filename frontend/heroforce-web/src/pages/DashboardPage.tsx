@@ -90,7 +90,8 @@ export default function DashboardPage() {
   // ── Data fetching ──
   const fetchProjects = async () => {
     try {
-      const { data } = await api.get('/projects')
+      const endpoint = isAdmin ? '/projects' : `/projects/user/${me?.sub}`
+      const { data } = await api.get(endpoint)
       setProjects(data)
     } catch {
       navigate('/') 
@@ -208,13 +209,16 @@ export default function DashboardPage() {
             <option value="">Todos os status</option>
             {ALL_STATUS.map(st => <option key={st} value={st}>{st}</option>)}
           </select>
-          <input
-            type="text"
-            placeholder="Filtrar por herói..."
-            value={filterHero}
-            onChange={e => setFilterHero(e.target.value)}
-            style={s.filterInput}
-          />
+          {isAdmin && (
+            <input
+              type="text"
+              placeholder="Filtrar por herói..."
+              value={filterHero}
+              onChange={e => setFilterHero(e.target.value)}
+              style={s.filterInput}
+            />
+          )}
+            
           {(filterStatus || filterHero) && (
             <button onClick={() => { setFilterStatus(''); setFilterHero('') }} style={s.clearBtn}>
               Limpar filtros

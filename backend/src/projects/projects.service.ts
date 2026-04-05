@@ -29,11 +29,15 @@ export class ProjectsService {
   }
 
   findAll() {
-    return this.repository.find({ relations: ['user'] }); // 👈 traz o user junto
+    return this.repository.find({ relations: ['user'] });
   }
 
   findOne(id: string) {
     return this.repository.findOne({ where: { id }, relations: ['user'] });
+  }
+
+  findByUserId(userId: string) {
+    return this.repository.find({ where: { user: { id: userId } }, relations: ['user'] });
   }
 
   async update(id: string, updateProjectDto: UpdateProjectDto) {
