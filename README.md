@@ -205,6 +205,16 @@ Spider-Man é o personagem escolhido — afinal, assim como ele, um bom desenvol
 
 ---
 
+---
+
+## 🖹 Observação
+
+Cadastro de usuários com permissão de administrador só está disponivel via API de cadastro, caso queria testar já deixei cadastrado no deploy um usuário pronto
+* E-mail: Admin@gmail.com
+* Senha: acess_admin
+
+---
+
 ## 👤 Autor
 
 **Rafael da Silva Castro**  
