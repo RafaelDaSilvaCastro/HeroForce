@@ -10,7 +10,7 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
   @ApiPropertyOptional({ example: 'peter.parker@gmail.com', description: 'Email do usuário (opcional)' })
   email?: string;
 
-  @ApiPropertyOptional({ example: 'Homem-Aranha', description: 'Personagem do usuário (opcional)' })
+  @ApiPropertyOptional({ example: 'Spider-Man', description: 'Personagem do usuário (opcional)' })
   character?: Character;
 
   @ApiPropertyOptional({ example: 'password123', description: 'Senha do usuário (opcional)' })

@@ -12,7 +12,7 @@ export class CreateUserDto {
   email!: string;
 
   @IsEnum(Character)
-  @ApiProperty({ example: 'Homem-Aranha' })
+  @ApiProperty({ example: 'Spider-Man' })
   character!: Character;
 
   @IsString()
