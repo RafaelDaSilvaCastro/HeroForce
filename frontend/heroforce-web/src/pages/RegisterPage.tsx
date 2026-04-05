@@ -154,6 +154,7 @@ export default function RegisterPage() {
               required
               style={styles.input}
             >
+              <option value="">Selecione seu personagem</option>
               {CHARACTER.map((char) => (
                 <option key={char} value={char}>
                   {char}
