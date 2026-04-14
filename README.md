@@ -133,8 +133,8 @@ http://localhost:3000/api
 ### Autenticação
 
 ```http
-POST /auth/register   # Cadastro de usuário
-POST /auth/login      # Login — retorna access_token
+POST /auth/signup   # Cadastro de usuário
+POST /auth/signin     # Login — retorna access_token
 ```
 
 ### Usuários
