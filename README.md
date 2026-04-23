@@ -192,14 +192,6 @@ HeroForce/
 
 ---
 
-## 🦸 Personagem
-
-Spider-Man é o personagem escolhido — afinal, assim como ele, um bom desenvolvedor resolve problemas com criatividade, mantém a calma sob pressão e nunca desiste no meio do caminho.
-
----
-
----
-
 ## 🖹 Observação
 
 Cadastro de usuários com permissão de administrador só está disponivel via API de cadastro, caso queria testar já deixei cadastrado no deploy um usuário pronto
